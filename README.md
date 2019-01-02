@@ -2,6 +2,10 @@
 
 Swift version of the CAPlayThrough example provided by Apple. (https://developer.apple.com/library/mac/samplecode/CAPlayThrough/Introduction/Intro.html)
 
+This fork modifies the app to instead be a menu bar application, intended to replace SoundFlowerBed (which stops working after a few hours on my machine). It will remember the devices you selected and start play-through when it launches if the input and output device are both found. This makes it possible to use Soundflower as your system output device and forward it to your real sound card, thereby giving you a working volume control (which is lacking on many audio recording cards such as mine).
+
+The icon is made by [Noor Hakim](https://www.iconfinder.com/icons/3938493/adjust_audio_equalizer_media_video_icon).
+
 ## Description
 
 Here is the description provided in the example by Apple.

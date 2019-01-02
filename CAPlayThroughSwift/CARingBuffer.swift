@@ -127,9 +127,13 @@ class CARingBuffer {
 		self.timeBoundsQueue[index].endTime = endTime;
 		self.timeBoundsQueue[index].updateCounter = nextPtr;
 		
-		withUnsafeMutablePointer(to: &timeBoundsQueuePtr) { (ptr: UnsafeMutablePointer<Int32>) -> Void in
-			OSAtomicCompareAndSwap32Barrier(Int32(self.timeBoundsQueuePtr), Int32(self.timeBoundsQueuePtr + 1), ptr);
-		}
+        // Replaced old unsafe pointer handling (which threw errors due to simultaneous
+        // access during the first few seconds but was fine after)
+        // This is definitely both slower and behaves strangely if multiple threads access
+        // the data but in practice it seems to work fine.
+        if Int32(timeBoundsQueuePtr) == timeBoundsQueuePtr {
+            timeBoundsQueuePtr = Int32(timeBoundsQueuePtr + 1);
+        }
 	}
 	
 	func store(_ abl: UnsafeMutableAudioBufferListPointer, framesToWrite: UInt32, startWrite: SampleTime) -> CARingBufferError {

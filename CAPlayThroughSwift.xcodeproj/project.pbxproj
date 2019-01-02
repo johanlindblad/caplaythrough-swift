@@ -24,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		047A109221DCF52B007ACAC1 /* CAPlayThroughSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CAPlayThroughSwift.entitlements; sourceTree = "<group>"; };
 		DA07D77A1C4B1705002333F5 /* FFTHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFTHelper.swift; sourceTree = "<group>"; };
 		DA07D77C1C4B3BE6002333F5 /* BufferManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferManager.swift; sourceTree = "<group>"; };
 		DA07D77E1C4B4DCD002333F5 /* FFTView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFTView.swift; sourceTree = "<group>"; };
@@ -72,6 +73,7 @@
 		DA79DE871C3339DC00B6ED9A /* CAPlayThroughSwift */ = {
 			isa = PBXGroup;
 			children = (
+				047A109221DCF52B007ACAC1 /* CAPlayThroughSwift.entitlements */,
 				DA79DE881C3339DC00B6ED9A /* AppDelegate.swift */,
 				DA79DE951C342F0E00B6ED9A /* AudioDeviceList.swift */,
 				DA79DE991C343E9D00B6ED9A /* AudioDevice.swift */,
@@ -123,7 +125,14 @@
 				TargetAttributes = {
 					DA79DE841C3339DC00B6ED9A = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 79YLRMNKW4;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -280,11 +289,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CAPlayThroughSwift/CAPlayThroughSwift.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 79YLRMNKW4;
 				INFOPLIST_FILE = CAPlayThroughSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.jpense.CAPlayThroughSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = se.johanlindblad.CAPlayThroughSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -293,11 +307,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CAPlayThroughSwift/CAPlayThroughSwift.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 79YLRMNKW4;
 				INFOPLIST_FILE = CAPlayThroughSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.jpense.CAPlayThroughSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = se.johanlindblad.CAPlayThroughSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
